@@ -1,0 +1,11 @@
+# Never commit participant data
+data/
+*.csv
+
+# Script output
+results/
+
+__pycache__/
+*.pyc
+.DS_Store
+.venv/

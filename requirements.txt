@@ -1,0 +1,16 @@
+# Verified reproducing environment for main_analyses.py
+#
+# Python 3.10.12
+#
+pandas==2.3.3
+numpy==2.2.6
+scipy==1.15.3
+statsmodels==0.15.0
+miceforest==6.0.5
+lightgbm==4.5.0
+
+# IMPORTANT: lightgbm must be < 4.6.
+# miceforest 6.0.5 calls Booster.__inner_predict(0), whose signature changed in
+# lightgbm 4.6. Installing a current lightgbm (4.7.x) makes the pipeline fail
+# immediately with:
+#   TypeError: Booster.__inner_predict() takes 1 positional argument but 2 were given
